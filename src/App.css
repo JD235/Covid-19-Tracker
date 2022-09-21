@@ -1,0 +1,286 @@
+* {
+    margin: 0;
+}
+body {
+    background: #010409;
+    color: white !important;
+}
+.covid h1 {
+    /* color: rgb(243, 72, 72); */
+    color: white;
+    letter-spacing: 0.2rem;
+    font-weight: 700;
+    font-size: 2.1rem;
+}
+#covid {
+    margin-top: 200px;
+    transform-origin: center;
+    animation: rotation 5s infinite linear;
+}
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.app {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+.app__right {
+    display: flex;
+    flex-direction: column;
+    background-color: #0d1117 !important;
+}
+
+.app__right .MuiCardContent-root {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background-color: #0d1117;
+    color: white;
+    border: 0.1rem solid rgba(255, 255, 255, 0.342);
+    border-radius: 10px;
+}
+.app__graph {
+    flex-grow: 1 !important;
+}
+.app__graphTitle {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.app__dropdown {
+    background-color: #21262d;
+    outline-style: none;
+    outline-color: transparent;
+    border-radius: 10px !important;
+    outline: none !important;
+}
+.MuiInputBase-root {
+    color: white !important;
+    border: 0.1rem solid rgba(255, 255, 255, 0.342);
+    border-radius: 10px !important;
+    outline: none !important;
+}
+.MuiSelect-icon {
+    color: white !important;
+}
+.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: red;
+}
+
+.app__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    justify-content: space-between;
+}
+.app__header > h1 {
+    color: #fc3c3c;
+    font-size: 2rem;
+}
+
+.app__left {
+    flex: 0.9;
+}
+
+.app__stats {
+    display: flex;
+    justify-content: space-between;
+}
+@media (max-width: 575.98px) {
+    .app__stats {
+        flex-direction: column;
+        width: 100%;
+    }
+    .app {
+        margin-right: 0;
+        flex-direction: column;
+    }
+    .app__header {
+        flex-direction: column;
+    }
+    .app__header h1 {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .infoBox:not(:last-child) {
+        margin-bottom: 15px;
+    }
+    .infoBox {
+        margin-left: 15px;
+    }
+    .map {
+        margin-bottom: 15px;
+    }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .app__stats {
+        flex-direction: column;
+        width: 100%;
+    }
+    .app {
+        margin-right: 0;
+        flex-direction: column;
+    }
+    .infoBox:not(:last-child) {
+        margin-bottom: 15px;
+    }
+    .infoBox {
+        margin-left: 15px;
+    }
+    .map {
+        margin-bottom: 15px;
+    }
+}
+/* TABLE */
+
+.table {
+    margin-top: 20px;
+    overflow: scroll;
+    height: 400px;
+    color: white;
+    background-color: black;
+    /* color: #6a5d5d; */
+}
+.table tr {
+    display: flex;
+    justify-content: space-between;
+}
+.table td {
+    padding: 0.5rem;
+}
+.table tr:nth-of-type(odd) {
+    background-color: #30363d;
+}
+.table tr:nth-of-type(even) {
+    background-color: #161b22;
+}
+
+/* MAP */
+
+.map {
+    height: 500px;
+    background-color: #0d1117;
+    padding: 1rem;
+    border: 0.1rem solid rgba(255, 255, 255, 0.342);
+    border-radius: 10px;
+    margin-top: 16px;
+    box-shadow: 0 0 8px -4px rgba(0, 0, 0, 0.5);
+}
+
+.map .leaflet-container {
+    height: 100%;
+}
+
+.info-flag img {
+    width: 100px;
+    border-radius: 5px;
+}
+.info-name {
+    font-size: 20px;
+    font-weight: bold;
+    color: #555;
+}
+
+.info-flag {
+    height: 80px;
+    width: 100%;
+    background-size: cover;
+    border-radius: 8px;
+}
+.info-container {
+    width: 150px;
+}
+
+.info-confirmed,
+.info-recovered,
+.info-deaths {
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+/* info-box */
+.infoBox {
+    flex: 1;
+    cursor: pointer;
+    border-radius: 5rem;
+}
+.app__stats .MuiPaper-rounded {
+    border-radius: 6px;
+}
+.app__stats .MuiPaper-root {
+    background-color: #b1bac438;
+    box-shadow: 0px 0px 0px 0.1rem rgba(255, 255, 255, 0.445);
+}
+.app__stats .MuiTypography-body1 {
+    color: white;
+}
+.infoBox {
+    margin-right: 15px;
+}
+.infoBox--selected {
+    border-top: 10px solid greenyellow;
+}
+.infoBox--red {
+    border-color: red;
+}
+.infoBox__cases--green {
+    color: #6cff78 !important;
+}
+.infoBox__cases {
+    color: red;
+    font-weight: 600;
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.infoBox__total {
+    color: #6c757d;
+    font-weight: 700 !important;
+    font-size: 0.8rem !important;
+    margin-top: 15px !important;
+}
+.MuiMenu-list {
+    background-color: #30363d;
+    color: white;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: #161b22;
+    box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.315);
+    position: absolute;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    bottom: 0;
+    width: 100%;
+    height: 6rem;
+}
+footer li {
+    list-style: none;
+    font-size: 1.2rem;
+}
+footer a {
+    color: rgba(255, 255, 255, 0.63);
+    transition: 0.2s ease-in-out;
+}
+footer a:hover {
+    color: white;
+    transition: 0.2s ease-in-out;
+}
+.main {
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 8rem;
+}
+.lists ul,
+.lists {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
